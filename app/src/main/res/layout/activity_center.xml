@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tacademy.airbnb103.ui.intro.CenterActivity"
+    android:background="@color/centerMainBg">
+
+    <!-- 주석 -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="로그인"
+            android:layout_width="wrap_content"
+            android:layout_height="82dp"
+            android:id="@+id/button"
+            android:background="@color/appTransparent"
+            android:textColor="@color/appTextMainColor"
+            android:layout_gravity="right"
+            android:onClick="onLogin" />
+
+        <ImageView
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            app:srcCompat="@drawable/logo"
+            android:id="@+id/imageView"
+            android:scaleType="fitStart" />
+
+        <TextView
+            android:text="에어비엔비에 오신 것을 환영합니다."
+            android:textColor="@color/appTextMainColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+
+        <Button
+            android:text="페이스북으로 계속하기"
+            android:textColor="@color/appTextMainColor"
+            android:background="@color/appTransparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:onClick="onFacebook" />
+
+        <Button
+            android:text="회원가입"
+            android:textColor="@color/appTextMainColor"
+            android:background="@color/appTransparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:onClick="onJoin" />
+
+        <TextView
+            android:text="추가옵션"
+            android:textColor="@color/appTextMainColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:text="이용약관"
+            android:textColor="@color/appTextMainColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:onClick="onTerms" />
+    </LinearLayout>
+
+</RelativeLayout>

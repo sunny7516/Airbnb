@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 어플 메인 적용 -->
+    <color name="appTransparent">#00000000</color>
+    <color name="appTextMainColor">#ffffff</color>
+
+    <!-- 회원가입 메인 배경색 -->
+    <color name="centerMainBg">#017b88</color>
+</resources>
