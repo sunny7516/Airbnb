@@ -18,7 +18,22 @@ public class E {
         public static final String TODAY_SAVE_DATE_FORMAT = "yyyy-MM-dd";
         // 긴급 공지 키
         public static final String EMERGENCY_KEY = "EMERGENCY_MSG";
+        // 리얼 도메인
+        public static final String REAL_DOMAIN_KEY = "REAL_DOMAIN";
+        // 테스트 도메인
+        public static final String TEST_DOMAIN_KEY = "TEST_DOMAIN";
+        // 테스트인지 아닌지
+        public static final String TEST_MODE_KEY = "TEST_MODE";
     }
     // 전문 API
-    // 서버 주소 => firebase로 대체
+    public static class NET {
+        public static String REAL_DOMAIN;
+        public static String TEST_DOMAIN;
+        public static String USE_DOMAIN;
+        public static boolean TEST_MODE;
+
+        // epl의 순위표를 가져온다.
+        public static final String API_GET_EPLLIST = "/eplSelect";
+    }
+        // 서버 주소 => firebase로 대체
 }

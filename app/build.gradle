@@ -24,21 +24,30 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    // 사용자 정의 alert 라이브러리
-    // 통계
-    // 오류 수집
-    // 원격구성
-    // 리소스를 자동 등록해주는 : 어노테이션을 활용
     compile 'com.android.support:appcompat-v7:24.2.1'
+    // 사용자 정의 alert 라이브러리
     compile 'cn.pedant.sweetalert:library:1.3'
+    // 통계
     compile 'com.google.firebase:firebase-core:10.0.1'
+    // 오류 수집
     compile 'com.google.firebase:firebase-crash:10.0.1'
+    // 원격 구성
     compile 'com.google.firebase:firebase-config:10.0.1'
-    compile 'com.jakewharton:butterknife:8.4.0'
+    // serviceActivity를 만들면서 추가된 android 라이브러리
     compile 'com.android.support:design:24.2.1'
     testCompile 'junit:junit:4.12'
+    // 리소스를 자동 등록해주는 : 어노테이션을 활용
+    compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    // 통신 라이브러리
     compile 'com.navercorp.volleyextensions:volley-extensions:1.1.1'
+    // json 파싱
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'org.immutables:gson:2.3.10'
+    // 이미지 프로세서
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    // circle 이미지
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }
 
 // firebase 기본설정2016.12.29

@@ -6,8 +6,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.tacademy.airbnb103.Util.Alert;
+import com.example.tacademy.airbnb103.Util.ImageProc;
 import com.example.tacademy.airbnb103.consts.E;
-import com.example.tacademy.airbnb103.test.ListActivity;
+import com.example.tacademy.airbnb103.test.Tap2Activity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
@@ -47,9 +48,25 @@ public class MainActivity extends AppCompatActivity {
                 mFirebaseRemoteConfig.activateFetched();
                 // 매개변수를 호출한다.
 
+                // 2017.01.04 ====================================
+                // 리얼 도메인 획득
+                E.NET.REAL_DOMAIN = mFirebaseRemoteConfig.getString(E.KEY.REAL_DOMAIN_KEY);
+                // 테스트 도메인 획득
+                E.NET.TEST_DOMAIN = mFirebaseRemoteConfig.getString(E.KEY.TEST_DOMAIN_KEY);
+                // 테스트 모드 플레그값 획득
+                E.NET.TEST_MODE = mFirebaseRemoteConfig.getBoolean(E.KEY.TEST_MODE_KEY);
+                if(E.NET.TEST_MODE){
+                    E.NET.USE_DOMAIN = E.NET.TEST_DOMAIN;
+                }else{
+                    E.NET.USE_DOMAIN = E.NET.REAL_DOMAIN;
+                }
+                // ===============================================
+                // 정상
+
                 // 긴급 공지 메세지 획득
                 String msg =
                         mFirebaseRemoteConfig.getString(E.KEY.EMERGENCY_KEY);
+
                 if (msg == null || msg.length() == 0 || msg.equals("")) {
                     goNextActivity();
                 } else {
@@ -73,12 +90,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goNextActivity() {
+        // 이미지 프로세스 처리 모듈 초기화
+        ImageProc.getInstance().getImageLoader(this);
 
         //인트로 화면으로 이동(Intent)
-        Intent intent = new Intent(this, ListActivity.class);
+        Intent intent = new Intent(this, Tap2Activity.class);
         //화면 전환 수행
         startActivity(intent);
         // 화면을 닫는다
         finish();
     }
+
 }

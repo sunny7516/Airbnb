@@ -32,7 +32,19 @@
             android:name=".ui.main.ServiceActivity"
             android:label="@string/title_activity_service"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".test.ListActivity"></activity>
+        <activity android:name=".test.ListActivity" />
+        <activity
+            android:name=".test.TapActivity"
+            android:label="@string/title_activity_tap"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".test.Tap2Activity"
+            android:label="@string/title_activity_tap2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".test.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
