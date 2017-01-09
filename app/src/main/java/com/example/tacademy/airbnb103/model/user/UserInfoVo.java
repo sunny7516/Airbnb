@@ -6,6 +6,7 @@ import java.io.Serializable;
  * 회원가입 시 사용되는 데이터 모델
  */
 
+
 public class UserInfoVo implements Serializable{
     //기본정보
     String firstName;

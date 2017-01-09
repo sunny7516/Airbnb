@@ -7,10 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.tacademy.airbnb103.Util.Alert;
 import com.example.tacademy.airbnb103.Util.ImageProc;
+import com.example.tacademy.airbnb103.Util.Log;
 import com.example.tacademy.airbnb103.consts.E;
-import com.example.tacademy.airbnb103.test.Tap2Activity;
+import com.example.tacademy.airbnb103.ui.intro.IntroActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
@@ -25,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
+
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.getInstance().log("토큰|:" + refreshedToken);
+
         // 2. 초기화
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings settings =
@@ -94,7 +100,12 @@ public class MainActivity extends AppCompatActivity {
         ImageProc.getInstance().getImageLoader(this);
 
         //인트로 화면으로 이동(Intent)
-        Intent intent = new Intent(this, Tap2Activity.class);
+        Intent intent = new Intent(this, IntroActivity.class);
+        //Intent intent = new Intent(this, ServiceActivity.class);
+        //Intent intent = new Intent(this, Tap2Activity.class);
+        //Intent intent = new Intent(this, ScrollingActivity.class);
+        //Intent intent = new Intent(this, ListActivity.class);
+
         //화면 전환 수행
         startActivity(intent);
         // 화면을 닫는다
